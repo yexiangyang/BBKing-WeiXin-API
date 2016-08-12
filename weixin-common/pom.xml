@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>weixin-core</artifactId>
+        <groupId>com.bbking.weixin</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>weixin-common</artifactId>
+    <packaging>jar</packaging>
+
+    <name>weixin-common</name>
+    <url>http://maven.apache.org</url>
+    <description>微信API:公共服务模块</description>
+
+
+</project>
