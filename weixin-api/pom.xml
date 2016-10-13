@@ -6,13 +6,17 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>weixin-api</artifactId>
     <packaging>jar</packaging>
-
     <name>weixin-api</name>
     <url>http://maven.apache.org</url>
     <description>微信API:微信接口模块</description>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.bbking.weixin</groupId>
+            <artifactId>weixin-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
