@@ -14,7 +14,47 @@
     <description>微信API:提供微信公众号、微信支付等微信接口的封装</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.16</log4j.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <fastjson.version>1.2.6</fastjson.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <httpclient.version>4.3.4</httpclient.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
@@ -23,13 +63,13 @@
                 <version>2.2.1</version>
                 <executions>
                     <execution>
-                        <id>create-source</id>
                         <!--指定一个名字-->
+                        <id>create-source</id>
+                        <!--在打包阶段生成source包-->
                         <phase>package</phase>
-                        <!--在编译阶段生成source包-->
                         <goals>
-                            <goal>jar</goal>
                             <!--指定生成的文件为jar包-->
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -40,13 +80,13 @@
                 <version>2.9.1</version>
                 <executions>
                     <execution>
-                        <id>create-javadoc</id>
                         <!--指定一个名字-->
+                        <id>create-javadoc</id>
+                        <!--在打包阶段生成source包-->
                         <phase>package</phase>
-                        <!--在编译阶段生成source包-->
                         <goals>
-                            <goal>jar</goal>
                             <!--指定生成的文件为jar包-->
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -76,6 +116,7 @@
             <id>maven-releases</id>
             <name>maven-releases</name>
             <url>http://localhost:8081/repository/maven-releases/</url>
+            <uniqueVersion></uniqueVersion>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
