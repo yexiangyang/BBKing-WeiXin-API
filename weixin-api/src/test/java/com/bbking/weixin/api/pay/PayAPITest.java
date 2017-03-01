@@ -2,6 +2,7 @@ package com.bbking.weixin.api.pay;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bbking.weixin.api.model.*;
+import com.bbking.weixin.common.PaySignUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -131,5 +132,15 @@ public class PayAPITest {
         reportPO.setSign("C32CF09E846BB9BDAF52AE7DBA2628C6");
         ReportRO reportRO = this.payAPI.report(reportPO);
         System.err.println(JSONObject.toJSONString(reportRO));
+    }
+
+    @Test
+    public void testGetSignKey() throws Exception {
+        GetSignKeyPO getSignKeyPO = new GetSignKeyPO();
+        getSignKeyPO.setMch_id("1329257601");
+        getSignKeyPO.setNonce_str("1234567890");
+        getSignKeyPO.setSign(PaySignUtil.paySign(getSignKeyPO, "sDGYszkxbbBMai7G8Vap7FL4gjwNXhvz"));
+        GetSignKeyRO getSignKeyRO = this.payAPI.getSignKey(getSignKeyPO);
+        System.err.println(JSONObject.toJSONString(getSignKeyRO));
     }
 }

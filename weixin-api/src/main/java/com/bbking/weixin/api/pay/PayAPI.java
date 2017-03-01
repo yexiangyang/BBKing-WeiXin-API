@@ -306,4 +306,29 @@ public class PayAPI {
         this.logger.info("PayAPI.report_return_" + JSONObject.toJSONString(reportRO));
         return reportRO;
     }
+
+    /**
+     * <p>获取验签秘钥接口</p>
+     * <p>验收仿真测试系统的API验签密钥需从API获取。</p>
+     *
+     * @param getSignKeyPO 获取验签秘钥接口请求实体类
+     * @return 获取验签秘钥接口返回实体类
+     */
+    public GetSignKeyRO getSignKey(GetSignKeyPO getSignKeyPO) {
+        this.logger.info("PayAPI.getSignKey_parameters_reportPO_" + JSONObject.toJSONString(getSignKeyPO));
+        GetSignKeyRO getSignKeyRO = null;
+        if (getSignKeyPO != null) {
+            try {
+                String xml = XMLUtil.bean2Xml(getSignKeyPO);
+                String result = HttpUtil.post(this.getSignkeyUrl, xml);
+                if (StringUtils.isNotBlank(result)) {
+                    getSignKeyRO = XMLUtil.xml2Bean(GetSignKeyRO.class, result);
+                }
+            } catch (Exception e) {
+                this.logger.info("PayAPI.getSignKey_error" + e);
+            }
+        }
+        this.logger.info("PayAPI.getSignKey_return_" + JSONObject.toJSONString(getSignKeyRO));
+        return getSignKeyRO;
+    }
 }

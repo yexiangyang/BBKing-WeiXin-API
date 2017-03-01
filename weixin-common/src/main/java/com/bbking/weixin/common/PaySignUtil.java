@@ -20,6 +20,8 @@ public class PaySignUtil {
     private static Logger logger = Logger.getLogger(PaySignUtil.class);
 
     /**
+     * 支付签名
+     *
      * @param object 签名对象
      * @param key    支付KEY
      */
