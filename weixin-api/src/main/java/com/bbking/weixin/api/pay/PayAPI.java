@@ -181,7 +181,7 @@ public class PayAPI {
             InputStream instream = null;
             CloseableHttpClient httpclient = null;
             try {
-                //数字证书
+                //加载退款数字证书
                 KeyStore keyStore = KeyStore.getInstance("PKCS12");
                 instream = refundPO.getInstream();
                 String mch_id = refundPO.getMch_id();
