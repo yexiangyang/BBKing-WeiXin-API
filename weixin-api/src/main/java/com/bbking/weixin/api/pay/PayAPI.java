@@ -55,6 +55,10 @@ public class PayAPI {
      * 交易保障URL
      */
     private String reportUrl = "https://api.mch.weixin.qq.com/payitil/report";
+    /**
+     * 获取验签秘钥URL
+     */
+    private String getSignkeyUrl = "https://api.mch.weixin.qq.com/sandboxnew/pay/getsignkey";
 
     /**
      * <p>默认构造器</p>
